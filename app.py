@@ -99,4 +99,5 @@ plt.xlabel('days')
 plt.ylabel('Close Price')
 plt.xticks(range(no_of_days))
 plt.yticks(range(min(list(map(int, future_results))), max(list(map(int, future_results))), 100))
-plt.ti
+plt.title('Closing Price of Bitcoin')
+st.pyplot(fig)
