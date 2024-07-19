@@ -90,4 +90,13 @@ def predict_future(no_of_days, prev_100):
 
 no_of_days = int(st.text_input("Enter the No of days to be predicted from current date : ", "10"))
 future_results = predict_future(no_of_days, prev_100)
-future_result
+future_results = np.array(future_results).reshape(-1, 1)
+fig = plt.figure(figsize=(15, 6))
+plt.plot(pd.DataFrame(future_results), marker='o')
+for i in range(len(future_results)):
+    plt.text(i, future_results[i], int(future_results[i][0]))
+plt.xlabel('days')
+plt.ylabel('Close Price')
+plt.xticks(range(no_of_days))
+plt.yticks(range(min(list(map(int, future_results))), max(list(map(int, future_results))), 100))
+plt.ti
