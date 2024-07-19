@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 import yfinance as yf
 from datetime import datetime
@@ -56,11 +56,11 @@ inv_pre = scaler.inverse_transform(predictions)
 inv_y_test = scaler.inverse_transform(y_data)
 
 ploting_data = pd.DataFrame(
- {
-  'original_test_data': inv_y_test.reshape(-1),
-  'predictions': inv_pre.reshape(-1)
- }, 
- index=bit_coin_data.index[splitting_len+100:]
+    {
+        'original_test_data': inv_y_test.reshape(-1),
+        'predictions': inv_pre.reshape(-1)
+    },
+    index=bit_coin_data.index[splitting_len+100:]
 )
 
 st.subheader("Original values vs Predicted values")
