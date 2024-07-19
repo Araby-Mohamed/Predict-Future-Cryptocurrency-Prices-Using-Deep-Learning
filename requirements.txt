@@ -2,7 +2,7 @@ streamlit
 pandas
 numpy
 keras
-tensorflow
+tensorflow==2.9.1
 matplotlib
 yfinance
 scikit-learn
